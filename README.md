@@ -1,4 +1,3 @@
-TO RUN REST API TESTS WITH GENERATING TEST REPORTS:
 Command to run rest api tests:
 ```
 mvn clean verify
