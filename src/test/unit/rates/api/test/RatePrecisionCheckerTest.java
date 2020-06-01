@@ -8,6 +8,7 @@ import rates.api.operation.RatePrecisionChecker;
 
 import java.math.BigDecimal;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(JUnitParamsRunner.class)
@@ -30,4 +31,21 @@ public class RatePrecisionCheckerTest {
     public void shouldCheckPrecisionOfTheRates(BigDecimal rate){
         assertTrue(RatePrecisionChecker.isCorrectPrecision(rate));
     }
+
+    @Parameters({
+            "0.0000000002488088",
+            "0.02488088",
+            "2.488088",
+            "24.88088",
+            "248.8088",
+            "2488.088",
+            "24880.88",
+            "248808.8",
+            "1234567.0"
+    })
+    @Test
+    public void shouldCheckPrecisionForIncorrectRates(BigDecimal rate){
+        assertFalse(RatePrecisionChecker.isCorrectPrecision(rate));
+    }
+
 }
