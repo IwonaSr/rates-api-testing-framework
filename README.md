@@ -1,21 +1,23 @@
-TO RUN REST API TESTS WITH GENERATING TEST REPORTS:
+Command to run rest api tests:
+```
 mvn clean verify
+```
 
-PATH TO GENERATED REPORTS:
+Path to generated reports:
+```
 target/site/serenity/index.html
+```
 
 I didn't have time to implement all possible test cases. I would like to show my way of thinking. 
-Due to lack of detailed specification I assumed some requirements which I discovered during testing endpoints.
+Due to lack of detailed specification (also no schema defined) I assumed some requirements which I discovered during endpoints testing.
 
 Scenarios check rates only against the Euro. It may not work for other base values. 
-To calculate precision format I use informations which I found on wikipedia. 
+To calculate rate format I use informations which I found on wikipedia. 
 I validate rates values using following rules:
- - value of should be more than zero
- - rates precision have to be more than 6
+ - value of rate should be more than zero
+ - rates precision cannot be more than 6
  
-Validation of date include checking if value is last working day in UTC zone (except holidays).
- 
-If schema was available I would check also field types. 
+Validation of date includes checking if value is last working day in UTC zone (except holidays).
 
 
 
