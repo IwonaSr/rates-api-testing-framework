@@ -17,7 +17,7 @@ I validate rates values using following rules:
  - value of rate should be more than zero
  - rates precision cannot be more than 6
  
-Validation of date includes checking if value is last working day in UTC zone (except holidays).
+Validation of date includes checking if value is last working day in UTC zone (checking if current time is before 16.00 and if date is holiday - not added yet).
 
 
 
